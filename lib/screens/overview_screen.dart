@@ -1,3 +1,5 @@
+import 'package:amazon_ui/models/product_model.dart';
+import 'package:amazon_ui/widgets/product_crousel.dart';
 import 'package:flutter/material.dart';
 
 class OverviewScreen extends StatelessWidget {
@@ -157,6 +159,15 @@ class OverviewScreen extends StatelessWidget {
                     ],
                   ))
             ],
+          ),
+          SizedBox(height:15),
+          ProductCrousel(
+            title:"Prime Day Deals",
+            products: products,
+          ),
+          ProductCrousel(
+            title:"Books",
+            products: books,
           )
         ],
       ),
