@@ -1,4 +1,5 @@
 import 'package:amazon_ui/models/product_model.dart';
+import 'package:amazon_ui/screens/cart_screen.dart';
 import 'package:amazon_ui/widgets/product_crousel.dart';
 import 'package:flutter/material.dart';
 
@@ -26,12 +27,16 @@ class OverviewScreen extends StatelessWidget {
         actions: <Widget>[
           Stack(
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 12.0, right: 20.0),
-                child: Icon(
-                  Icons.shopping_cart,
-                  size: 30.0,
-                  color: Colors.black,
+              InkWell(
+                onTap: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => CartScreen())),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 12.0, right: 20.0),
+                  child: Icon(
+                    Icons.shopping_cart,
+                    size: 30.0,
+                    color: Colors.black,
+                  ),
                 ),
               ),
               Positioned(
@@ -160,13 +165,13 @@ class OverviewScreen extends StatelessWidget {
                   ))
             ],
           ),
-          SizedBox(height:15),
+          SizedBox(height: 15),
           ProductCrousel(
-            title:"Prime Day Deals",
+            title: "Prime Day Deals",
             products: products,
           ),
           ProductCrousel(
-            title:"Books",
+            title: "Books",
             products: books,
           )
         ],
